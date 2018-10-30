@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Breakmaster Cylinder Segments</title>
+    <script src="rss-parser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- {{this.feedUrl}} -->
+      <ul>
+        <li v-for="e in episodes">
+          {{e.title}} starting {{e.breakmasterCylinderSegmentDuration}} from the end
+          <vue-audio
+            :file="e.enclosure.url"
+            :start-time="-e.breakmasterCylinderSegmentDuration">
+          </vue-audio>
+        </li>
+      </ul>
+    </div>
+    <script src="breakMasterCylinderSegments.js"></script>
+    <script src="vue-audio.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
