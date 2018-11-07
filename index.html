@@ -11,7 +11,7 @@
     <div id="app">
       <!-- {{this.feedUrl}} -->
       <ul>
-        <li v-for="e in episodes">
+        <li v-for="e in episodes.slice(start, start + episodesPerPage)">
           {{e.title}} starting {{e.breakmasterCylinderSegmentDuration}} from the end
           <vue-audio
             :file="e.enclosure.url"
@@ -19,6 +19,9 @@
           </vue-audio>
         </li>
       </ul>
+      <button @click="start -= episodesPerPage" :disabled="start <= 0">Prev Page</button>
+      {{start + 1}} - {{Math.min(start + episodesPerPage, episodes.length)}} / {{episodes.length}}
+      <button @click="start += episodesPerPage" :disabled="start + episodesPerPage >= episodes.length">Next Page</button>
     </div>
     <script src="breakMasterCylinderSegments.js"></script>
     <script src="vue-audio.js"></script>

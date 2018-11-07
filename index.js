@@ -11,7 +11,9 @@ let app = new Vue({
   el: '#app',
   data: {
     feedUrl: "http://feeds.gimletmedia.com/hearreplyall?format=xml",
-    episodes: []
+    episodes: [],
+    start: 0,
+    episodesPerPage: 10
   },
   created: function() {
     // Note: some RSS feeds can't be loaded in the browser due to CORS security.
