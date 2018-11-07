@@ -53,6 +53,9 @@ Vue.component("vue-audio", {
         this.audio.currentTime = this.startTime
       }
     },
+    skipBy: function(numSeconds) {
+      this.audio.currentTime += numSeconds
+    },
     _handleLoaded: function () {
       if (this.audio.readyState >= 2) {
         if (this.autoPlay) this.play()
@@ -86,5 +89,7 @@ Vue.component("vue-audio", {
   template: '<div :class="`${classes}-wrapper`">' +
     '<audio controls v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" ></audio>' +
     '<button @click="goToStartTime()" v-show="startTime">Go to start of segment</button>' +
+    '<button @click="skipBy(-10)">&lt;&lt;10s</button>' +
+    '<button @click="skipBy(10)">&gt;&gt;10s</button>' +
   '</div>'
 });
