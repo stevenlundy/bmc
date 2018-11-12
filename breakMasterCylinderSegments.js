@@ -37,4 +37,5 @@ var breakmasterCylinderSegments = [
   {episode: 124, duration: 116, description: "The story of planet D-E-C-A-F. BMC went looking for internet. The inhabitants gave him a chip they said would give him internet, but it just made him slower. There was a lock on his helmet that he had to pick."},
   {episode: 125, duration: 92, description: "BMC still has the slow motion chip. If Cool puts it back in BMC's helmet, he'll be able to hit the switch right when it flickers."},
   {episode: 129, duration: 122, description: "They hit the switch and end up near perilous cliffs. There are footprints. BMC finds another computer chip and decides to put it in his head. "},
+  {episode: 130, duration: 127, description: "There is a rock slide falling between two worm holes. Cool goes through the worm hole. Time goes backwards. BMC wakes up (it was a dream) and sounds funny"},
 ];
